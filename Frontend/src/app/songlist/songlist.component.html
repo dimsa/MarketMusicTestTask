@@ -1,0 +1,14 @@
+<app-player *ngIf="selectedSong" [song]="selectedSong"></app-player>
+<app-search-btn (searchTextChanged)="onSearchTextChanged($event)" ></app-search-btn> 
+<div class="row add-btn-row">
+  <div class="col-xs-offset-11 col-xs-1 btn-primary btn" (click)="addSongBtnClick()">+</div>
+</div>
+<div class="row">
+  <ul class="list-group">
+    <li *ngFor="let song of songs" [class.selected]="song === selectedSong" class="list-group-item">
+      <app-song [model]="song" (songPlayRequested)="onSongPlayRequested($event)" (songDeleteRequested)="onSongDeleteRequested($event)"></app-song>
+    </li>
+  </ul>
+</div>
+
+<app-upload-dialog [isVisible]="isUploadDialogVisible" (closeBtnClicked)="onCloseBtnClicked($event)" (applyBtnClicked)="onApplyBtnClicked($event)"></app-upload-dialog>

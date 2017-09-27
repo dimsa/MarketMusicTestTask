@@ -1,0 +1,37 @@
+<div *ngIf="isVisible" class="modal in" style="display: block; padding-right: 17px;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">       
+        <h4 class="modal-title">Выберите аудизапись на вашем компьютере</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-xs-12">
+          <ul class="list-group">
+            <li class="list-group-item">Аудиофайл не должен превышать 200 Мб и должен быть в формате MP3</li>
+            <li class="list-group-item">Аудиофайл не должен нарушать авторские и смежные права</li>
+          </ul>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <form name="uploadform" class="form-inline" method="post" enctype="multipart/form-data" action="localhost:1977/api/songs">
+                  <div>
+                      <label for="fileToUpload" class="control-label">Музыкальный файл с расширением mp3</label>
+                      <input name="fileToUpload" class="form-control" type="file" accept=".mp3" (change)="onFileChange($event)"/>
+                  </div>
+              </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-offset-8 col-xs-2">
+                <button class="btn-default btn" type="file" (click)="close()">Cancel</button>
+            </div>
+            <div class="col-xs-2">
+                <button class="btn-primary btn" type="button" (click)="apply()">Ok</button>
+            </div>            
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

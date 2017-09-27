@@ -1,0 +1,27 @@
+.songitem {
+    padding: 5px 10px;
+}
+
+.songitem .play {
+    display: block;
+}
+
+.songitem .pause {
+    display: none;
+}
+
+.selected .songitem .play {
+    display: none;
+}
+
+.selected .songitem .pause {
+    display: block;
+}
+
+.song-name {
+    font-size: 18px;
+    padding-top: 4px;
+}
+
+
+

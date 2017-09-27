@@ -1,0 +1,7 @@
+.dark {
+    background: #333;    
+}
+
+.dark > h1 {
+    color: #fff;
+}
